@@ -9,7 +9,7 @@ html {
 body {
     /* font-family: Arial, Helvetica, sans-serif; */
     font-family: 'Ubuntu', sans-serif;
-    height: 400vh;
+    /* height: 400vh; */
 }
 
 a {
@@ -28,6 +28,7 @@ a {
     z-index: 1;
     background-color: #022873;
     color: #fff;
+    z-index: 2;
 }
 
 .logo {
@@ -103,6 +104,68 @@ header h1 {
     /* border-radius: .5rem; */
 }
 
+header a {
+    position: absolute;
+    bottom: 20%;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    background-color: rgba(0, 0, 0, .4);
+    width: 150px;
+    height: 6rem;
+    border: 1px solid #fff;
+    border-radius: .4rem;
+    font-size: 2rem;
+    text-align: center;
+    line-height: 6rem;
+    z-index: 1;
+/* może być tak nr1 */
+    /* transition: .5s; */
+}
+
+/* header a:hover {
+    background-color: green;
+} */
+
+header a::after {
+    content: '';
+    display: block;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 0;
+    background-color: green;
+    border-radius: .4rem;
+    transition: .5s;
+    z-index: -1;
+}
+
+header a:hover::after {
+    width: 100%;
+    height: 100%;
+    
+}
+
+/* Sekcje main */
+section {
+    height: 100vh;
+    
+}
+
+section h2 {
+    text-align: center;
+    font-size: 3rem;
+    padding-top: 8rem;
+}
+
+section:nth-last-of-type(even) {
+    background-color: lightcyan;
+}
+
+
+
+
 @media screen and (min-width: 700px) {
     
     header h1 {
@@ -117,4 +180,21 @@ header h1 {
         font-size: 8rem;
     }
 
+    .top span {
+        display: none;
+    }
+
+    .logo {
+        flex: 2;
+    }
+
+    nav {
+        flex: 1.4;
+        position: static;
+        display: flex;
+        /* align-items: center; */
+        justify-content: space-around;
+    }
+
 } 
+
